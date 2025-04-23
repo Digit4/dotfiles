@@ -1,0 +1,7 @@
+gui:
+  theme:
+    selectedLineBgColor:
+      - "#313244"  # Change this to a more visible bg color
+    selectedRangeBgColor:
+      - "#313244"  # Optional: selection range in diff view
+
