@@ -1,0 +1,220 @@
+* {
+    rosewater:     #f5e0dc;
+    flamingo:      #f2cdcd;
+    pink:          #f5c2e7;
+    mauve:         #cba6f7;
+    red:           #f38ba8;
+    maroon:        #eba0ac;
+    peach:         #fab387;
+    yellow:        #f9e2af;
+    green:         #a6e3a1;
+    teal:          #94e2d5;
+    sky:           #89dceb;
+    sapphire:      #74c7ec;
+    blue:          #89b4fa;
+    lavender:      #b4befe;
+    lavender2:     #a3b8f3;  /* Lighter lavender */
+    cyan:          #89f0d0;  /* Pastel cyan */
+    softblue:      #a0d6ff;  /* Soft pastel blue */
+    softgreen:     #c8f7c5;  /* Pastel mint green */
+    softpink:      #f7c8d8;  /* Light pastel pink */
+    
+    text:          #cdd6f4;
+    subtext1:      #bac2de;
+    subtext0:      #a6adc8;
+    overlay2:      #9399b2;
+    overlay1:      #7f849c;
+    overlay0:      #6c7086;
+    surface2:      #585b70;
+    surface1:      #45475a;
+    surface0:      #313244;
+    base:          #1e1e2e;
+    mantle:        #181825;
+    crust:         #11111b;
+  
+    background-color: @base;
+    foreground:       @text;
+    selected:         @blue;
+    active:           @mauve;
+    text-selected:    @base;
+    border-color:     @lavender;
+    urgent:           @red;
+    info:             @cyan;
+    warning:          @yellow;
+  }
+    
+  window {
+    width: 50%;
+    orientation: vertical;
+    border: 2px;
+    border-radius: 20px;
+    border-color: @border-color;
+    background-color: @background-color;
+  }
+  
+  mainbox {
+    padding: 10px;
+    orientation: vertical;
+    background-color: transparent;
+  }
+  
+  inputbar {
+    padding: 10px 10px 200px 10px;
+    margin: 10px;
+    border-radius: 25px;
+    orientation: horizontal;
+    background-color: transparent;
+    children: [ entry, dummy, mode-switcher ];
+    background-image: url("~/Pictures/Wallpapers/anime-girl.png", width);
+  }
+  
+  entry {
+    width: 20%;
+    padding: 10px;
+    border-radius: 12px;
+    background-color: @selected;
+    color: @text-selected;
+    placeholder: "🖥️ Search ";
+    placeholder-color: inherit;
+  }
+  
+  listbox {
+    spacing: 10px;
+    padding: 10px;
+    background-color: transparent;
+    orientation: vertical;
+    children: [ message, listview ];
+  }
+  
+  listview {
+    columns: 2;
+    lines: 6;
+    cycle: true;
+    dynamic: true;
+    scrollbar: false;
+    layout: vertical;
+    reverse: false;
+    fixed-height: false;
+    fixed-columns: true;
+    spacing: 10px;
+    background-color: transparent;
+    border: 0px;
+  }
+  
+  dummy {
+    expand: true;
+    background-color: transparent;
+  }
+  
+  mode-switcher {
+    spacing: 10px;
+    background-color: transparent;
+  }
+  
+  button {
+    width: 5%;
+    padding: 12px;
+    border-radius: 12px;
+    background-color: @text-selected;
+    color: @text;
+    cursor: pointer;
+  }
+  
+  button selected {
+    background-color: @selected;
+    color: @text-selected;
+    border: 1px;
+    border-color: @border-color;
+  }
+  
+  scrollbar {
+    width: 4px;
+    border: 0;
+    handle-color: @border-color;
+    handle-width: 8px;
+    padding: 0;
+  }
+  
+  element {
+    padding: 10px;
+    spacing: 10px;
+    border-radius: 12px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  
+  element normal.normal {
+    background-color: transparent;
+    color: @foreground;
+  }
+  
+  element normal.active {
+    background-color: @active;
+    color: @foreground;
+  }
+  
+  element normal.urgent {
+    background-color: @urgent;
+    color: @foreground;
+  }
+  
+  element selected.normal {
+    background-color: @selected;
+    color: @text-selected;
+  }
+  
+  element selected.active {
+    background-color: @active;
+    color: @text-selected;
+  }
+  
+  element selected.urgent {
+    background-color: @urgent;
+    color: @text-selected;
+  }
+  
+  element alternate.normal 
+  element alternate.active 
+  element alternate.urgent {
+    background-color: transparent;
+    color: @foreground;
+    border: 10px;
+  }
+  
+  element-text {
+    background-color: transparent;
+    font: "JetBrainsMono Nerd Font Mono 12";
+    color: inherit;
+    cursor: inherit;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+  }
+  
+  element-icon {
+    background-color: transparent;
+    color: inherit;
+    size: 36px;
+    cursor: inherit;
+  }
+  
+  message {
+    background-color: transparent;
+    border: 0px;
+  }
+  
+  textbox {
+    padding: 12px;
+    border-radius: 10px;
+    background-color: @background-color;
+    color: @red;
+    vertical-align: 0.5;
+    horizontal-align: 0.0;
+  }
+  
+  error-message {
+    padding: 12px;
+    border-radius: 20px;
+    background-color: @background-color;
+    color: @text;
+  }
+  
